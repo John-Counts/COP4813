@@ -1,0 +1,29 @@
+
+
+body {
+	color: white;
+	font-family: "Times New Roman", Times, serif;
+	background-color: steelblue;
+	margin-top: 80px;
+	margin-bottom: 100px;
+}
+
+
+h1, h2 {
+	text-align: center;
+}
+
+#footer {
+	position: fixed;
+	background-color: steelblue;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	text-align: center;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
