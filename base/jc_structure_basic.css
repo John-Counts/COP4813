@@ -1,0 +1,113 @@
+body {
+	position: relative;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+header {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 20px;
+	gap: 20px;
+}
+
+nav {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.link_button {
+	display: inline-block;
+	padding: 12px 20px;
+	text-decoration: none;
+	font-size: 16px;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown:focus-within .dropdown_content {
+	display: block;
+}
+
+.drop_button {
+	padding: 12px 20px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+
+.drop_cont {
+	display: none;
+	position: absolute;
+	min-width: 250px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0,2);
+	z-index: 1;
+}
+
+.drop_cont a {
+	padding: 12px 20px;
+	display: block;
+	text-decoration: none;
+	transition: background-color 0.2s ease;
+}
+
+.dropdown.hoverable:hover .drop_cont {
+	display: block;
+}
+
+.logo img {
+	max-width: 100%;
+	height: 180px;
+	display: block;
+}
+
+.lg_pic {
+	width: 100%;
+	height: auto;
+	margin-bottom: 25px;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.header_stack {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+main {
+	flex: 1;
+	border-radius: 8px;
+	margin: 30px 80px 120px 80px;
+	padding: 0 40px 20px 40px;
+}
+
+footer {
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	text-align: center;
+	position: absolute;
+	padding: 20px;
+}
+
+h1, h2 {
+	text-align: center;
+}
+

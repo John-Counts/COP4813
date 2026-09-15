@@ -1,0 +1,80 @@
+
+:root {
+	--bod_col: steelblue;
+	--main_col: seashell;
+	--cont_col: slategray;
+	--head_col: navy;
+	--here_col: mediumblue;
+	--hover_col: darkkhaki;
+	--base_col: darkgray;
+	--odd_col: gray;
+	--even_col: dimgray;
+	--text_col: black;
+	--label_col: white;
+	--field_col: linen;
+}
+
+body {
+	color: var(--text_col);
+	background-color: var(--bod_col);
+	font-family: "Times New Roman", Times, serif;
+}
+
+main {
+	background-color: var(--main_col);
+}
+
+header, footer {
+	background-color: var(--head_col);
+	color: var(--label_col);
+}
+
+fieldset {
+	background-color: var(--field_col);
+}
+
+.drop_button, .link_button {
+	background-color: var(--base_col);
+	color: var(--label_col);
+	transition: background-color 0.2s;
+}
+
+.drop_button, .link_button, .drop_cont {
+	font-family: arial, helvetica, "Open Sans";
+}
+
+.link_button:hover, .link_button:focus, .drop_cont a:hover, .drop_cont a:focus {
+	background-color: var(--hover_col);
+}
+
+.dropdown:hover .drop_button, .dropdown:focus-within .drop_button{
+	background-color: var(--hover_col);
+}
+
+.dropdown:focus-within .drop_button {
+	background-color: var(--hover_col);
+}
+
+.dropdown:hover .drop_button {
+	background-color: var(--hover_col);
+}
+
+.drop_cont_odd {
+	background-color: var(--odd_col);
+}
+
+.drop_cont_even {
+	background-color: var(--even_col);
+}
+
+.dropdown:focus-within .drop_cont {
+	display: block;
+}
+
+.here_bg_col {
+	background-color: var(--here_col);
+}
+
+.lgt_links {
+	color: white;
+}
