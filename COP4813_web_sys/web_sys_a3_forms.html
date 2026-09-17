@@ -11,6 +11,7 @@
 	<meta name="generator" content="Geany 2.1" />
 	<link rel="stylesheet" href="../base/jc_structure_basic.css">
 	<link rel="stylesheet" href="../base/jc_col_1.css">
+	<script src="../COP4813_web_sys/jc_form.js" defer></script>
 </head>
 
 <body>
@@ -39,58 +40,86 @@
 	<main>
 		<h2>Forms</h2>
 		<p>The purpose of this assignment is to practice the use of forms.</p>
-		<form action="mailto:john_counts825@daytonastate.edu" method="post" enctype="text/plain">
-			<fieldset>
-				<legend>personal information</legend>
-				<label for="fname">first name: </label>
-				<input type="text" id="fname" name="fname" placeholder="first name" pattern="[A-Za-z]{1,15}" title="first name" required>
-				<label for="lname">last name: </label>
-				<input type="text" id="lname" name="lname" placeholder="last name" pattern="[A-Za-z]{1,15}" title="last name" required>
-				<br><br>
-				<label for="addr_street">street address: </label>
-				<input type="text" id="addr_street" name="addr_street" placeholder="street address" pattern="[A-Za-z0-9]{1,255}" required>
-				<label for="addr_unit">apartment/unit: </label>
-				<input type="text" id="addr_unit" name="addr_unit" placeholder="apartment or unit number" pattern="[A-Za-z0-9]{1,15}">
-				<br><br>
-				<label for="addr_city">city: </label>
-				<input type="text" id="addr_city" name="addr_city" placeholder="City" pattern="[A-Za-z]{1-255}" required>
-				<label for="addr_state">state: </label>
-				<select id="addr_state" name="addr_state">
-					<option value="FL">FL</option>
-					<option value="notFL">not FL</option>
-				</select>
-				<label for="addr_zip">zip code: </label>
-				<input type="text" id="addr_zip" name="addr_zip" placeholder="zip code" pattern="[A-Za-z0-9]{1-15}">
-				<br><br>
-				<label for="phone">phone number: </label>
-				<input type="tel" id="phone" name="phone" placeholder="(555) 555-1234" maxlength="14">
-				<script>
-				const phone_input = document.getElementById("phone");
-				phone_input.addEventListener("input", function (event) {
-					let phone = event.target.value.replace(/\D/g, "");
-					phone = phone.substring(0, 10);
-					if (phone.length > 6) {
-						phone = "(" + phone.substring(0, 3) + ") " + phone.substring(3, 6) + "-" + phone.substring(6);
-					} else if (phone.length > 3) {
-						phone = "(" + phone.substring(0, 3) + ") " + phone.substring(3);
-					} else if (phone.length > 0) {
-						phone = "(" + phone;
-					}
-					event.target.value = phone;
-				});
-				</script>
-				<br><br>
-				<label for="addr_email">email: </label>
-				<input type="email" id="addr_email" name="addr_email" placeholder="email@host.com" required>
+		<form id="personal_form" action="mailto:john_counts825@daytonastate.edu" method="post" enctype="text/plain">
+			<fieldset class="form_grid">
+				<legend class="full_width">personal information</legend>
+				<div class="span_6">
+					<label for="fname">first name:</label>
+					<input type="text" id="fname" name="fname" placeholder="first name" pattern="[A-Za-z]{1,15}" title="first name" autocomplete="given-name" required>
+				</div>
+				<div class="span_6">
+					<label for="lname">last name:</label>
+					<input type="text" id="lname" name="lname" placeholder="last name" pattern="[A-Za-z]{1,15}" title="last name" autocomplete="family-name" required>
+				</div>
+				<div class="span_9">
+					<label for="addr_street">street address:</label>
+					<input type="text" id="addr_street" name="addr_street" placeholder="street address" pattern="[A-Za-z0-9 ]{1,255}" title="enter your address" autocomplete="street-address" required>
+				</div>
+				<div class="span_3">
+					<label for="addr_unit">apt/unit:</label>
+					<input type="text" id="addr_unit" name="addr_unit" placeholder="apartment or unit number" pattern="[A-Za-z0-9]{1,15}" title="alphanumeric, no symbols">
+				</div>
+				<div class="span_6">
+					<label for="addr_city">city:</label>
+					<input type="text" id="addr_city" name="addr_city" placeholder="City" pattern="[A-Za-z ]{1,255}" title="city name here" autocomplete="address-level2" required>
+				</div>
+				<div class="span_3">
+					<select id="addr_state" name="addr_state" autocomplete="address-level1" required>
+						<option value="" disabled selected hidden>State</option>
+						<option value="FL">FL</option>
+						<option value="notFL">not FL</option>
+					</select>
+				</div>
+				<div class="span_3">
+					<label for="addr_zip">zip code:</label>
+					<input type="text" id="addr_zip" name="addr_zip" placeholder="zip code" pattern="[A-Za-z0-9]{1,15}" title="zip/postal code" autocomplete="postal-code" required>
+				</div>
+				<div class="span_4">
+					<label for="phone">phone number:</label>
+					<input type="tel" id="phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="(555) 555-1234" maxlength="14">
+				</div>
+				<div class="span_8">
+					<label for="email">email:</label>
+					<input type="email" id="email" name="email" placeholder="email@host.com" autocomplete="email" required>
+				</div>
 			</fieldset>
-			<fieldset>
-				<legend>message</legend>
-				<label for="message">enter a message: </label>
-				<textarea name="message" id="message" rows="4" cols="64" placeholder="type a message here."></textarea>
+			<fieldset class="form_grid">
+				<legend class="full_width">message</legend>
+				<div class="span_12">
+					<label for="message">enter a message:</label>
+					<textarea name="message" id="message" rows="4" placeholder="type a message here."></textarea>
+				</div>
 			</fieldset>
-			<br>
-			<button type="submit" value="send">Submit</button>
+			<fieldset class="form_grid">
+				<legend class="full_width">anti elf-toaster defense haiku</legend>
+				<div class="span_12">
+					<label for="sec_question">the meatbag says what</label>
+					<label for="sec_question">a toaster cannot fathom</label>
+					<label for="sec_question">speak friend and enter.</label>
+					<input type="text" id="sec_question" name="sec_question" placeholder="speak friend" pattern="[A-Za-z]{1,15}" title="what is the password" required>
+				</div>
+			</fieldset>
+			<div class="full_width form_actions">
+				<button type="submit" value="send">Review & Submit</button>
+			</div>
 		</form>
+		<dialog id="review_dialog">
+				<h2>Review your information</h2>
+				<p>first name: <span id="dia_fname"></span></p>
+				<p>last name: <span id="dia_lname"></span></p>
+				<p>street address: <span id="dia_street"></span></p>
+				<p>unit: <span id="dia_unit"></span></p>
+				<p>city: <span id="dia_city"></span></p>
+				<p>state: <span id="dia_state"></span></p>
+				<p>zip: <span id="dia_zip"></span></p>
+				<p>email: <span id="dia_email"></span></p>
+				<p>phone number: <span id="dia_phone"></span></p>
+				<p>message: <span id="dia_message"></span></p>
+				<div class="dialog_actions">
+					<button id="cancel_button">cancel</button>
+					<button id="confirm_button">submit</button>
+				</div>
+			</dialog>
 	</main>
 	<footer>
 		<p>Created by John Counts</p>
