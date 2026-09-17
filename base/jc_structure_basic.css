@@ -111,3 +111,83 @@ h1, h2 {
 	text-align: center;
 }
 
+
+form {
+	max-width: 800px;
+	margin: 2rem auto;
+	padding: 1.5rem;
+	border: 1px solid;
+}
+
+.form_grid div {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.form_grid label {
+	font-weight: 600;
+	font-size: 0.9rem;
+}
+
+.form_grid input, .form_grid textarea {
+	padding: 0.5rem;
+	border: 1px solid;
+}
+
+legend {
+	font-size: 1.25rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+@media (min-width: 600px) {
+	.form_grid {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		gap: 1.25rem;
+	}
+	
+	.full_width { grid-column: 1 / -1; }
+	.span_3 { grid-column: span 3; }
+	.span_4 { grid-column: span 4; }
+	.span_6 { grid-column: span 6; }
+	.span_8 { grid-column: span 8; }
+	.span_9 { grid-column: span 9; }
+	.span_12 { grid-column: span 12; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
