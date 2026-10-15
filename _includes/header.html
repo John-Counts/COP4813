@@ -5,8 +5,8 @@
 	<h1>John Counts</h1>
 	<h2>Programming, IT, Web Development</h2>
 	<nav aria-label="Main navigation">
-		<a href="{{ site.baseurl }}/base/home.html" class="link_button">Home</a>
-		<a href="{{ site.baseurl }}/base/portfolio.html" class="link_button here_bg_col">Portfolio</a>
+		<a href="{{ site.baseurl }}/base/home.html" class="link_button {% if page.url == '/base/home.html' %}here_bg_col{% endif %}">Home</a>
+		<a href="{{ site.baseurl }}/base/portfolio.html" class="link_button {% if page.url == '/base/portfolio.html' %}here_bg_col{% endif %}">Portfolio</a>
 		<div class="dropdown hoverable">
 			<button class="drop_button">Tools</button>
 			<div class="drop_cont">
@@ -15,7 +15,7 @@
 				<a href="https://validator.w3.org/#validate_by_uri+with_options" class="drop_cont_odd lgt_links">Validator</a>
 			</div>
 		</div>
-		<a href="{{ site.baseurl }}/base/contact.html" class="link_button">Contact</a>
+		<a href="{{ site.baseurl }}/base/contact.html" class="link_button {% if page.url == '/base/contact.html' %}here_bg_col{% endif %}">Contact</a>
 	</nav>
 </div>
 
