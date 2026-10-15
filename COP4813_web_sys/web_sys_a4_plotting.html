@@ -1,0 +1,79 @@
+<!--
+   This website showcases John Counts' programming and web work
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>John Counts | Web IV</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 2.1" />
+	<link rel="stylesheet" href="../base/jc_structure_basic.css">
+	<link rel="stylesheet" href="../base/jc_col_1.css">
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="../COP4813_web_sys/jc_plotting.js" defer></script>
+</head>
+
+<body>
+	<header>
+		<div class="logo">
+			<img src="../pictures/logo_loksr.gif" alt="Logo, John Counts">
+		</div>
+		<div class="header_stack">
+			<h1>John Counts</h1>
+			<h2>Programming, IT, Web Development</h2>
+			<nav aria-label="Main navigation">
+				<a href="../base/home.html" class="link_button">Home</a>
+				<a href="../base/portfolio.html" class="link_button here_bg_col">Portfolio</a>
+				<div class="dropdown hoverable">
+					<button class="drop_button">Tools</button>
+					<div class="drop_cont">
+						<a href="https://justfuckingusehtml.com/" class="drop_cont_odd lgt_links">HTML Reference</a>
+						<a href="https://www.quackit.com/css/css_color_codes.cfm" class="drop_cont_even lgt_links">CSS Reference</a>
+						<a href="https://validator.w3.org/#validate_by_uri+with_options" class="drop_cont_odd lgt_links">Validator</a>
+					</div>
+				</div>
+				<a href="../base/contact.html" class="link_button">Contact</a>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<h2>Plotting</h2>
+		<p>The purpose of this assignment is to use a plotting library, chart.js</p>
+		<form>
+			<fieldset class="form_grid">
+				<legend class="full_width">Flow Rate using Bernoulli's principle</legend>
+				<div class="span_6">
+					<label for="a1">a1 (pipe area at inlet):</label>
+					<input type="number" id="a1" name="a1" value="50" min="1" max="9999" step="3" required>
+					<label for="a2">a2 (pipe area at throat):</label>
+					<input type="number" id="a2" name="a2" value="10" min="1" max="9999" step="3" required>
+					<label for="min_q">Q minimum (what minimum flowrate you want to chart from):</label>
+					<input type="number" id="min_q" name="min_q" value="100" min="100" max="9999" step="3" required>
+					<label for="max_q">Q maximum (what maximum flowrate you want to chart to):</label>
+					<input type="number" id="max_q" name="max_q" value="1000" min="1000" max="9999" step="3" required>
+				</div>
+				<div class="span_6">
+					<img src="../pictures/venturimeter.jpg" alt="venturimeter diagram, one version of equation">
+				</div>
+				<div class="span_12">
+					<input type="button" id="chart_button" value="chart delta P" onClick="plot_chart()">
+					<p>The modified equation charted below, having converted to a form using the density of the fluid (rho, <em>p</em>) and 
+					assuming equal height of inlet and outlet comes from the flow rate equation: </br>
+					Q=CA<sub>2</sub>sqrt{2(P<sub>1</sub>-P<sub>2</sub>)/<em>p</em>[1-(A<sub>2</sub>/A<sub>1</sub>)<sup>2</sup>]}, and after alteration becomes: </br> 
+					(P<sub>1</sub>-P<sub>2</sub>)={<em>p</em>Q<sup>2</sup>[1-(A<sub>2</sub>/A<sub>1</sub>)<sup>2</sup>]}/{2C<sup>2</sup>A<sub>2</sub><sup>2</sup>}</br>
+					also charted is the same flow rate and inlet pipe, but with a throat diameter 20% smaller.</p>
+					<div style="position: relative; height: 400px; width: 100%">
+						<canvas id="plot"></canvas>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</main>
+	<footer>
+		<p>Created by John Counts</p>
+	</footer>
+</body>
+
+</html>
