@@ -16,6 +16,35 @@
 			</div>
 		</div>
 		<a href="{{ site.baseurl }}/base/contact.html" class="link_button {% if page.url == '{{ site.baseurl }}/base/contact.html' %}here_bg_col{% endif %}">Contact</a>
+		<!--
+		<button id="theme_toggle" class="light_dark_button" aria-label="toggle dark and light mode">Theme</button>
+		document.addEventListener('DOMCountentLoaded', () => {
+			const toggle_button = document.getElementById('theme_toggle');
+			if (toggle_button) {
+				toggle_button.addEventListener('click', () => {
+					const html_element = document.documentElement;
+					if (html_element.classList.contains('dark_override')) {
+						html_element.classList.remove('dark_override');
+						html_element.classList.add('light_override');
+						localStorage.setItem('theme', 'light');
+					} else if (html_element.classlist.contains('light-override')) {
+						html_element.classList.remove('light_override');
+						html_element.classList.add('dark_override');
+						localStorage.setItem('theme', 'dark');
+					} else {
+						const prefers_dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+						if (prefers_dark) {
+							html_element.classList.add('light_override');
+							localStorage.setItem('theme', 'light');
+						} else {
+							html_element.classList.add('dark_override');
+							localStorage.setItem('theme', 'dark');
+						}
+					}
+				});
+			}
+		});
+		-->
 	</nav>
 </div>
 
