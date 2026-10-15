@@ -10,10 +10,10 @@
 	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/jc_structure_basic.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/jc_col_1.css">
 	{% if page.extra_css %}
-		<link rel="stylesheet" href="{{ site.baseurl }}/css/{{ page.extra_css }}">
+		<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ page.extra_css }}">
 	{% endif %}
 	{% if page.head_js %}
-		<script src="{{ site.baseurl }}/js/{{ page.head_js }}">
+		<script src="{{ site.baseurl }}/assets/js/{{ page.head_js }}">
 	{% endif %}
 </head>
 <body>
@@ -21,7 +21,7 @@
 	<main>{{ content }}</main>
 	{% include footer.html %}
 	{% if page.extra_js %}
-		<script src="{{ site.baseurl }}/js/{{ page.extra_js }}">
+		<script src="{{ site.baseurl }}/assets/js/{{ page.extra_js }}">
 	{% endif %}
 </body>
 </html>
