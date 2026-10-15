@@ -10,18 +10,37 @@
 	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/jc_structure_basic.css">
 	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/jc_col_1.css">
 	{% if page.extra_css %}
-		<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ page.extra_css }}">
+		{% for css_file in page.extra_css %}
+			<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/{{ css_file }}">
+		{% endfor %}
 	{% endif %}
-	{% if page.head_js %}
-		<script src="{{ site.baseurl }}/assets/js/{{ page.head_js }}"></script>
+	{% if page.extra_js %}
+		{% for item in page.extra_js %}
+			{% assign file_path = item.file | default: item %}
+			{% assign load_attr = item.load | default: "defer" %}
+			{% if file_path contains "http://" or file_path contains "https://" or file_path contains "//" %}
+				<script src="{{ file_path }}" {{ load_attr }}></script>
+			{% else %}
+				<script src="{{ site.baseurl }}/assets/js/{{ file_path }}" {{ load_attr }}></script>
+			{% endif %}
+		{% endfor %}
 	{% endif %}
+	<!--
+	<script>
+		(function() {
+			const saved_theme = localStorage.getItem('theme');
+			if (saved_theme === 'dark') {
+				document.documentElement.classList.add('dark_override');
+			} else if (saved_theme === 'light') {
+				document.documentElement.classList.add('light_override');
+			}
+		})();
+	</script>
+	-->
 </head>
 <body>
 	<header>{% include header.html %}</header>
 	<main>{{ content }}</main>
 	<footer>{% include footer.html %}</footer>
-	{% if page.extra_js %}
-		<script src="{{ site.baseurl }}/assets/js/{{ page.extra_js }}"></script>
-	{% endif %}
 </body>
 </html>
