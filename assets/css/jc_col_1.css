@@ -12,7 +12,64 @@
 	--text_col: black;
 	--label_col: white;
 	--field_col: linen;
+	--ld_col: purple;
+	--ld_hover_col: orange;
 }
+
+/*
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bod_col: steelblue;
+		--main_col: seashell;
+		--cont_col: slategray;
+		--head_col: navy;
+		--here_col: mediumblue;
+		--hover_col: darkkhaki;
+		--base_col: darkgray;
+		--odd_col: gray;
+		--even_col: dimgray;
+		--text_col: black;
+		--label_col: white;
+		--field_col: linen;
+		--ld_col: purple;
+		--ld_hover_col: orange;
+	}
+}
+
+html.dark_override {
+	--bod_col: steelblue !important;
+	--main_col: seashell !important;
+	--cont_col: slategray !important;
+	--head_col: navy !important;
+	--here_col: mediumblue !important;
+	--hover_col: darkkhaki !important;
+	--base_col: darkgray !important;
+	--odd_col: gray !important;
+	--even_col: dimgray !important;
+	--text_col: black !important;
+	--label_col: white !important;
+	--field_col: linen !important;
+	--ld_col: purple;
+	--ld_hover_col: orange;
+}
+
+html.light_override {
+	--bod_col: steelblue !important;
+	--main_col: seashell !important;
+	--cont_col: slategray !important;
+	--head_col: navy !important;
+	--here_col: mediumblue !important;
+	--hover_col: darkkhaki !important;
+	--base_col: darkgray !important;
+	--odd_col: gray !important;
+	--even_col: dimgray !important;
+	--text_col: black !important;
+	--label_col: white !important;
+	--field_col: linen !important;
+	--ld_col: purple;
+	--ld_hover_col: orange;
+}
+*/
 
 body {
 	color: var(--text_col);
@@ -37,6 +94,15 @@ fieldset {
 	background-color: var(--base_col);
 	color: var(--label_col);
 	transition: background-color 0.2s;
+}
+
+.light_dark_button {
+	background-color: var(--ld_col);
+	transition: background-color 0.2s;
+}
+
+.light_dark_button:hover, .light_dark_button:focus {
+	background-color: var(--ld_hover_col);
 }
 
 .drop_button, .link_button, .drop_cont {
