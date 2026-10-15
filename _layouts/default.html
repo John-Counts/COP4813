@@ -17,9 +17,9 @@
 	{% endif %}
 </head>
 <body>
-	{% include header.html %}
+	<header>{% include header.html %}</header>
 	<main>{{ content }}</main>
-	{% include footer.html %}
+	<footer>{% include footer.html %}</footer>
 	{% if page.extra_js %}
 		<script src="{{ site.baseurl }}/assets/js/{{ page.extra_js }}">
 	{% endif %}
