@@ -1,0 +1,37 @@
+---
+layout: default
+title: "John Counts | Web1 V"
+#extra_css:
+#- "list_css_files_like_so.css"
+#- "and_so.css"
+extra_js:
+- "jc_spirograph.js"
+#- "https://cdn.jsdelivr.net/npm/chart.js"
+#- file: "and_like_so_for_async.js"
+#load: "async"
+---
+<h2>Spirograph/ Canvas</h2>
+<p>In this assignment, I get more experience with canvas elements, making a spirograph generator.</p>
+<form>
+	<fieldset class="form_grid">
+		<legend class="full_width">Enter spirograph seeds and generate</legend>
+		<div class="span_6">
+			<label for="R">R, the radius of the outer circle:</label>
+			<input type="number" id="R" name="R" value="30" min="1" max="100" required>
+			<label for="r">r, the radius of the inner circle:</label>
+			<input type="number" id="r" name="r" value="22" min="1" max="99" required>
+			<label for="O">O, the offset of the pen from the center of the inner circle:</label>
+			<input type="number" id="O" name="O" value="10" min="1" max="99" required>
+			<input type="button" id="seed_button" value="seed random and draw">
+			<input type="button" id="draw_button" value="draw spirograph">
+			<div class="span_6" style="position: relative; height: 400px">
+				<canvas id="plot" style="width: 100%; height: 100%; display: block;"></canvas>
+			</div>
+		</div>
+		<div class="span_6">
+			<img src="../assets/pictures/spirograph.jpg" alt="a spirograph stencil, with variables labeled">
+		</div>
+		
+	</fieldset>
+</form>
+
