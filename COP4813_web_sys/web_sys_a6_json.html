@@ -1,0 +1,29 @@
+---
+layout: default
+title: "John Counts | Home"
+#extra_css:
+#- "list_css_files_like_so.css"
+#- "and_so.css"
+extra_js:
+#- "normal_for_defer.js"
+- file: "json_card_display.js"
+load: "async"
+---
+<h2>JSON Manipulation</h2>
+<p>This page makes use of JSON files by retrieving information from one, containing information from the 
+Magic: The Gathering card Carrion Feeder.</p>
+
+<div class="form_grid">
+	<span id="card_title" class="span_9">title...</span>
+	<span id="mana_cost" class="span_3">mana cost...</span>
+	<img class="full_width" id="card_image" src="" alt="" style="display: none;">
+	<span id="card_type" class="span_4">type...</span>
+	<span id="card_subtype" class="span_4">subtype...</span>
+	<span id="card_set" class="span_4">set...</span>
+	<span id="card_text" class="full_width">rules text...</span>
+	<span id="flavor_text" class="full_width">flavor text...</span>
+	<span id="illustrator" class="span_6">Illus...</span>
+	<span id="power" class="span_3">P...</span>
+	<span id="toughness" class="span_3">T...</span>
+</div>
+
