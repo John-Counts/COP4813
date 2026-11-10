@@ -1,0 +1,14 @@
+{
+	"title": "Carrion Feeder",
+	"mana_cost": "B",
+	"type": "Creature",
+	"subtype": "Zombie",
+	"set_symbol": "Scourge Common",
+	"card_text": "This creature can't block. Sacrifice a creature: Put a +1/+1 counter on Carrion Feeder.",
+	"flavor": "Stinking of rot, it leaps between gravestones in search of its next meal.",
+	"illustrator": "Brian Snoddy",
+	"power": "1",
+	"toughness": "1",
+	"image_url": "../assets/pictures/carrion_feeder.jpg",
+	"alt_text": "the carrion feeder"
+}
