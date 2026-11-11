@@ -1,7 +1,7 @@
 
 async function load_json_data() {
   try {
-    const response = await fetch('data.json');
+    const response = await fetch('../assets/json/carrion_feeder.json');
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
